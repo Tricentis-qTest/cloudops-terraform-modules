@@ -18,13 +18,6 @@ variable "vpc_name" {
 variable "tags" {
   description = "Tags to set for all resources"
   type        = map(string)
-  default = {
-    app        = "qTestManager",
-    service    = "qtest",
-    department = "Engineering",
-    team       = "qTestManager",
-    customer   = "bogus",
-    region     = "bogus"
-  }
+  default = {}
 }
 
