@@ -1,8 +1,8 @@
 module "ec2_instance" {
   source  = "terraform-aws-modules/ec2-instance/aws"
 
-  create                               = var.defaults.create
-  name                                 = var.defaults.name
+  create                               = var.create
+  name                                 = var.name
   ami_ssm_parameter                    = var.ami_ssm_parameter
   ami                                  = var.ami
   ignore_ami_changes                   = var.ignore_ami_changes
@@ -21,7 +21,7 @@ module "ec2_instance" {
   host_id                              = var.host_id
   iam_instance_profile                 = var.iam_instance_profile
   instance_initiated_shutdown_behavior = var.instance_initiated_shutdown_behavior
-  instance_type                        = var.instance_typet3.micro
+  instance_type                        = var.instance_type
   ipv6_address_count                   = var.ipv6_address_count
   ipv6_addresses                       = var.ipv6_addresses
   key_name                             = var.key_name
