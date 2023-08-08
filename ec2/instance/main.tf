@@ -1,5 +1,5 @@
 module "ec2_instance" {
-  source  = "terraform-aws-modules/ec2-instance/aws"
+  source  = "git::https://github.com/terraform-aws-modules/terraform-aws-ec2-instance?ref=v5.2.1"
 
   create                               = var.create
   name                                 = var.name
@@ -26,11 +26,7 @@ module "ec2_instance" {
   ipv6_addresses                       = var.ipv6_addresses
   key_name                             = var.key_name
   launch_template                      = var.launch_template
-  # metadata_options = try(each.value.metadata_options, var.defaults.metadata_options, {
-  #   "http_endpoint"               = "enabled"
-  #   "http_put_response_hop_limit" = 1
-  #   "http_tokens"                 = "optional"
-  # })
+  metadata_options                    =  var.metadata_options
   monitoring                          = var.monitoring
   network_interface                   = var.network_interface
   placement_group                     = var.placement_group

@@ -1,5 +1,5 @@
 module "security_group" {
-  source = "terraform-aws-modules/security-group/aws"
+  source = "git::https://github.com/terraform-aws-modules/terraform-aws-security-group?ref=v5.1.0"
 
   name        = var.name
   description = var.description
