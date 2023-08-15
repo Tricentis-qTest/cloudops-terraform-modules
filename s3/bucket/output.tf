@@ -47,3 +47,4 @@
 #   description = "The domain of the website endpoint, if the bucket is configured with a website. If not, this will be an empty string. This is used to create Route 53 alias records."
 #   value       = module.this.website_domain
 # }
+
