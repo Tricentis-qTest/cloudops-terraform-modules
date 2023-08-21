@@ -55,7 +55,7 @@ module "this" {
   db_instance_tags                       = var.db_instance_tags
   db_subnet_group_name                   = var.db_subnet_group_name
   parameter_group_name                   = var.parameter_group_name
-  option_group_name                      = var.option_group
+  option_group_name                      = var.option_group_name
   db_option_group_tags                   = var.db_option_group_tags
   db_parameter_group_tags                = var.db_parameter_group_tags
   db_subnet_group_tags                   = var.db_subnet_group_tags
