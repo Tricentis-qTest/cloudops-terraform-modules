@@ -2,20 +2,20 @@
 # # VPC
 # ################################################################################
 
-# output "vpc_id" {
-#   description = "The ID of the VPC"
-#   value       = module.this.id
-# }
+output "vpc_id" {
+  description = "The ID of the VPC"
+  value       = module.this.vpc_id
+}
 
-# output "vpc_arn" {
-#   description = "The ARN of the VPC"
-#   value       = module.this.arn
-# }
+output "vpc_arn" {
+  description = "The ARN of the VPC"
+  value       = module.this.vpc_arn
+}
 
-# output "vpc_cidr_block" {
-#   description = "The CIDR block of the VPC"
-#   value       = module.this.cidr_block
-# }
+output "vpc_cidr_block" {
+  description = "The CIDR block of the VPC"
+  value       = module.this.vpc_cidr_block
+}
 
 # output "default_security_group_id" {
 #   description = "The ID of the security group created by default on VPC creation"
@@ -99,10 +99,10 @@
 # # Publiс Subnets
 # ################################################################################
 
-# output "public_subnets" {
-#   description = "List of IDs of public subnets"
-#   value       = module.public[*].id
-# }
+output "public_subnets" {
+  description = "List of IDs of public subnets"
+  value       = module.this.public_subnets
+}
 
 # output "public_subnet_arns" {
 #   description = "List of ARNs of public subnets"
@@ -153,10 +153,10 @@
 # # Private Subnets
 # ################################################################################
 
-# output "private_subnets" {
-#   description = "List of IDs of private subnets"
-#   value       = module.private[*].id
-# }
+output "private_subnets" {
+  description = "List of IDs of private subnets"
+  value       = module.this.private_subnets
+}
 
 # output "private_subnet_arns" {
 #   description = "List of ARNs of private subnets"
@@ -602,12 +602,12 @@
 # # Static values (arguments)
 # ################################################################################
 
-# output "azs" {
-#   description = "A list of availability zones specified as argument to this module"
-#   value       = var.azs
-# }
+output "azs" {
+  description = "A list of availability zones specified as argument to this module"
+  value       = var.azs
+}
 
-# output "name" {
-#   description = "The name of the VPC specified as argument to this module"
-#   value       = var.name
-# }
+output "name" {
+  description = "The name of the VPC specified as argument to this module"
+  value       = var.name
+}
