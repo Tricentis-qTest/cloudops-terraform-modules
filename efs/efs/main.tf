@@ -1,7 +1,7 @@
 ####### EFS module ############
 
 module "this" {
-  source = "git::https://github.com/terraform-aws-modules/terraform-aws-efs?ref=v1.3.1"
+  source = "git::https://github.com/terraform-aws-modules/terraform-aws-efs?ref=v1.3.0"
 
   create                                = var.create
   name                                  = var.name
