@@ -17,83 +17,83 @@ output "vpc_cidr_block" {
   value       = module.this.vpc_cidr_block
 }
 
-# output "default_security_group_id" {
-#   description = "The ID of the security group created by default on VPC creation"
-#   value       = module.this.default_security_group_id
-# }
+output "default_security_group_id" {
+  description = "The ID of the security group created by default on VPC creation"
+  value       = module.this.default_security_group_id
+}
 
-# output "default_network_acl_id" {
-#   description = "The ID of the default network ACL"
-#   value       = module.this.default_network_acl_id
-# }
+output "default_network_acl_id" {
+  description = "The ID of the default network ACL"
+  value       = module.this.default_network_acl_id
+}
 
-# output "default_route_table_id" {
-#   description = "The ID of the default route table"
-#   value       = module.this.default_route_table_id
-# }
+output "default_route_table_id" {
+  description = "The ID of the default route table"
+  value       = module.this.default_route_table_id
+}
 
-# output "vpc_instance_tenancy" {
-#   description = "Tenancy of instances spin up within VPC"
-#   value       = module.this.instance_tenancy
-# }
+output "vpc_instance_tenancy" {
+  description = "Tenancy of instances spin up within VPC"
+  value       = module.this.vpc_instance_tenancy
+}
 
-# output "vpc_enable_dns_support" {
-#   description = "Whether or not the VPC has DNS support"
-#   value       = module.this.enable_dns_support
-# }
+output "vpc_enable_dns_support" {
+  description = "Whether or not the VPC has DNS support"
+  value       = module.this.vpc_enable_dns_support
+}
 
-# output "vpc_enable_dns_hostnames" {
-#   description = "Whether or not the VPC has DNS hostname support"
-#   value       = module.this.enable_dns_hostnames
-# }
+output "vpc_enable_dns_hostnames" {
+  description = "Whether or not the VPC has DNS hostname support"
+  value       = module.this.vpc_enable_dns_hostnames
+}
 
-# output "vpc_main_route_table_id" {
-#   description = "The ID of the main route table associated with this VPC"
-#   value       = module.this.main_route_table_id
-# }
+output "vpc_main_route_table_id" {
+  description = "The ID of the main route table associated with this VPC"
+  value       = module.this.vpc_main_route_table_id
+}
 
-# output "vpc_ipv6_association_id" {
-#   description = "The association ID for the IPv6 CIDR block"
-#   value       = module.this.ipv6_association_id
-# }
+output "vpc_ipv6_association_id" {
+  description = "The association ID for the IPv6 CIDR block"
+  value       = module.this.vpc_ipv6_association_id
+}
 
-# output "vpc_ipv6_cidr_block" {
-#   description = "The IPv6 CIDR block"
-#   value       = module.this.ipv6_cidr_block
-# }
+output "vpc_ipv6_cidr_block" {
+  description = "The IPv6 CIDR block"
+  value       = module.this.vpc_ipv6_cidr_block
+}
 
-# output "vpc_secondary_cidr_blocks" {
-#   description = "List of secondary CIDR blocks of the VPC"
-#   value       = compact(module.this[*].cidr_block)
-# }
+output "vpc_secondary_cidr_blocks" {
+  description = "List of secondary CIDR blocks of the VPC"
+  value       = compact(module.this.vpc_secondary_cidr_blocks)
+}
 
-# output "vpc_owner_id" {
-#   description = "The ID of the AWS account that owns the VPC"
-#   value       = module.this.owner_id
-# }
+output "vpc_owner_id" {
+  description = "The ID of the AWS account that owns the VPC"
+  value       = module.this.vpc_owner_id
+}
 
 # ################################################################################
 # # DHCP Options Set
 # ################################################################################
 
-# output "dhcp_options_id" {
-#   description = "The ID of the DHCP options"
-#   value       = module.this.id
-# }
+output "dhcp_options_id" {
+  description = "The ID of the DHCP options"
+  value       = module.this.dhcp_options_id
+}
 
 # ################################################################################
 # # Internet Gateway
 # ################################################################################
 
-# output "igw_id" {
-#   description = "The ID of the Internet Gateway"
-#   value       = module.this.id
-# }
+output "igw_id" {
+  description = "The ID of the Internet Gateway"
+  value       = module.this.igw_id
+}
 
-# output "igw_arn" {
-#   description = "The ARN of the Internet Gateway"
-#   value       = module.this.arn
-# }
+output "igw_arn" {
+  description = "The ARN of the Internet Gateway"
+  value       = module.this.igw_arn
+}
 
 # ################################################################################
 # # Publiс Subnets
@@ -104,50 +104,45 @@ output "public_subnets" {
   value       = module.this.public_subnets
 }
 
-# output "public_subnet_arns" {
-#   description = "List of ARNs of public subnets"
-#   value       = module.public[*].arn
-# }
+output "public_subnet_arns" {
+  description = "List of ARNs of public subnets"
+  value       = module.this.public_subnet_arns
+}
 
-# output "public_subnets_cidr_blocks" {
-#   description = "List of cidr_blocks of public subnets"
-#   value       = compact(module.public[*].cidr_block)
-# }
+output "public_subnets_cidr_blocks" {
+  description = "List of cidr_blocks of public subnets"
+  value       = compact(module.this.public_subnets_cidr_blocks)
+}
 
-# output "public_subnets_ipv6_cidr_blocks" {
-#   description = "List of IPv6 cidr_blocks of public subnets in an IPv6 enabled VPC"
-#   value       = compact(module.public[*].ipv6_cidr_block)
-# }
+output "public_subnets_ipv6_cidr_blocks" {
+  description = "List of IPv6 cidr_blocks of public subnets in an IPv6 enabled VPC"
+  value       = compact(module.this.public_subnets_ipv6_cidr_blocks)
+}
 
-# output "public_route_table_ids" {
-#   description = "List of IDs of public route tables"
-#   value       = local.public_route_table_ids
-# }
+output "public_internet_gateway_route_id" {
+  description = "ID of the internet gateway route"
+  value       = module.this.public_internet_gateway_route_id
+}
 
-# output "public_internet_gateway_route_id" {
-#   description = "ID of the internet gateway route"
-#   value       = module.public_internet_gateway.id
-# }
+output "public_internet_gateway_ipv6_route_id" {
+  description = "ID of the IPv6 internet gateway route"
+  value       = module.this.public_internet_gateway_ipv6_route_id
+}
 
-# output "public_internet_gateway_ipv6_route_id" {
-#   description = "ID of the IPv6 internet gateway route"
-#   value       = module.public_internet_gateway_ipv6.id
-# }
+output "public_route_table_association_ids" {
+  description = "List of IDs of the public route table association"
+  value       = module.this.public_route_table_association_ids
+}
 
-# output "public_route_table_association_ids" {
-#   description = "List of IDs of the public route table association"
-#   value       = module.public[*].id
-# }
+output "public_network_acl_id" {
+  description = "ID of the public network ACL"
+  value       = module.this.public_network_acl_id
+}
 
-# output "public_network_acl_id" {
-#   description = "ID of the public network ACL"
-#   value       = module.public.id
-# }
-
-# output "public_network_acl_arn" {
-#   description = "ARN of the public network ACL"
-#   value       = module.public.arn
-# }
+output "public_network_acl_arn" {
+  description = "ARN of the public network ACL"
+  value       = module.this.public_network_acl_arn
+}
 
 # ################################################################################
 # # Private Subnets
@@ -158,154 +153,149 @@ output "private_subnets" {
   value       = module.this.private_subnets
 }
 
-# output "private_subnet_arns" {
-#   description = "List of ARNs of private subnets"
-#   value       = module.private[*].arn
-# }
+output "private_subnet_arns" {
+  description = "List of ARNs of private subnets"
+  value       = module.this.private_subnet_arns
+}
 
-# output "private_subnets_cidr_blocks" {
-#   description = "List of cidr_blocks of private subnets"
-#   value       = compact(module.private[*].cidr_block)
-# }
+output "private_subnets_cidr_blocks" {
+  description = "List of cidr_blocks of private subnets"
+  value       = compact(module.this.private_subnets_cidr_blocks)
+}
 
-# output "private_subnets_ipv6_cidr_blocks" {
-#   description = "List of IPv6 cidr_blocks of private subnets in an IPv6 enabled VPC"
-#   value       = compact(module.private[*].ipv6_cidr_block)
-# }
+output "private_subnets_ipv6_cidr_blocks" {
+  description = "List of IPv6 cidr_blocks of private subnets in an IPv6 enabled VPC"
+  value       = compact(module.this.private_subnets_ipv6_cidr_blocks)
+}
 
-# # output "private_route_table_ids" {
-# #   description = "List of IDs of private route tables"
-# #   value       = local.private_route_table_ids
-# # }
+output "private_nat_gateway_route_ids" {
+  description = "List of IDs of the private nat gateway route"
+  value       = module.this.private_nat_gateway_route_ids
+}
 
-# output "private_nat_gateway_route_ids" {
-#   description = "List of IDs of the private nat gateway route"
-#   value       = module.private_nat_gateway[*].id
-# }
+output "private_ipv6_egress_route_ids" {
+  description = "List of IDs of the ipv6 egress route"
+  value       = module.this.private_ipv6_egress_route_ids
+}
 
-# output "private_ipv6_egress_route_ids" {
-#   description = "List of IDs of the ipv6 egress route"
-#   value       = module.private_ipv6_egress[*].id
-# }
+output "private_route_table_association_ids" {
+  description = "List of IDs of the private route table association"
+  value       = module.this.private_route_table_association_ids
+}
 
-# output "private_route_table_association_ids" {
-#   description = "List of IDs of the private route table association"
-#   value       = module.private[*].id
-# }
+output "private_network_acl_id" {
+  description = "ID of the private network ACL"
+  value       = module.this.private_network_acl_id
+}
 
-# output "private_network_acl_id" {
-#   description = "ID of the private network ACL"
-#   value       = module.private.id
-# }
-
-# output "private_network_acl_arn" {
-#   description = "ARN of the private network ACL"
-#   value       = module.private.arn
-# }
+output "private_network_acl_arn" {
+  description = "ARN of the private network ACL"
+  value       = module.this.private_network_acl_arn
+}
 
 # ################################################################################
 # # Outpost Subnets
 # ################################################################################
 
-# output "outpost_subnets" {
-#   description = "List of IDs of outpost subnets"
-#   value       = module.outpost[*].id
-# }
+output "outpost_subnets" {
+  description = "List of IDs of outpost subnets"
+  value       = module.this.outpost_subnets
+}
 
-# output "outpost_subnet_arns" {
-#   description = "List of ARNs of outpost subnets"
-#   value       = module.outpost[*].arn
-# }
+output "outpost_subnet_arns" {
+  description = "List of ARNs of outpost subnets"
+  value       = module.this.outpost_subnet_arns
+}
 
-# output "outpost_subnets_cidr_blocks" {
-#   description = "List of cidr_blocks of outpost subnets"
-#   value       = compact(module.outpost[*].cidr_block)
-# }
+output "outpost_subnets_cidr_blocks" {
+  description = "List of cidr_blocks of outpost subnets"
+  value       = compact(module.this.outpost_subnets_cidr_blocks)
+}
 
-# output "outpost_subnets_ipv6_cidr_blocks" {
-#   description = "List of IPv6 cidr_blocks of outpost subnets in an IPv6 enabled VPC"
-#   value       = compact(module.outpost[*].ipv6_cidr_block)
-# }
+output "outpost_subnets_ipv6_cidr_blocks" {
+  description = "List of IPv6 cidr_blocks of outpost subnets in an IPv6 enabled VPC"
+  value       = compact(module.this.outpost_subnets_ipv6_cidr_blocks)
+}
 
-# output "outpost_network_acl_id" {
-#   description = "ID of the outpost network ACL"
-#   value       = module.outpost.id
-# }
+output "outpost_network_acl_id" {
+  description = "ID of the outpost network ACL"
+  value       = module.this.outpost_network_acl_id
+}
 
-# output "outpost_network_acl_arn" {
-#   description = "ARN of the outpost network ACL"
-#   value       = module.outpost.arn
-# }
+output "outpost_network_acl_arn" {
+  description = "ARN of the outpost network ACL"
+  value       = module.this.outpost_network_acl_arn
+}
 
 # ################################################################################
 # # Database Subnets
 # ################################################################################
 
-# output "database_subnets" {
-#   description = "List of IDs of database subnets"
-#   value       = module.database[*].id
+output "database_subnets" {
+  description = "List of IDs of database subnets"
+  value       = module.this.database_subnets
+}
+
+output "database_subnet_arns" {
+  description = "List of ARNs of database subnets"
+  value       = module.this.database_subnet_arns
+}
+
+output "database_subnets_cidr_blocks" {
+  description = "List of cidr_blocks of database subnets"
+  value       = compact(module.this.database_subnets_cidr_blocks)
+}
+
+output "database_subnets_ipv6_cidr_blocks" {
+  description = "List of IPv6 cidr_blocks of database subnets in an IPv6 enabled VPC"
+  value       = compact(module.this.database_subnets_ipv6_cidr_blocks)
+}
+
+output "database_subnet_group" {
+  description = "ID of database subnet group"
+  value       = module.this.database_subnet_group
+}
+
+output "database_subnet_group_name" {
+  description = "Name of database subnet group"
+  value       = module.this.database_subnet_group_name
+}
+
+# output "database_route_table_ids" {
+#   description = "List of IDs of database route tables"
+#   # Refer to https://github.com/terraform-aws-modules/terraform-aws-vpc/pull/926 before changing logic
+#   value = length(aws_route_table.database[*].id) > 0 ? aws_route_table.database[*].id : aws_route_table.private[*].id
 # }
 
-# output "database_subnet_arns" {
-#   description = "List of ARNs of database subnets"
-#   value       = module.database[*].arn
-# }
+output "database_internet_gateway_route_id" {
+  description = "ID of the database internet gateway route"
+  value       = module.this.database_internet_gateway_route_id
+}
 
-# output "database_subnets_cidr_blocks" {
-#   description = "List of cidr_blocks of database subnets"
-#   value       = compact(module.database[*].cidr_block)
-# }
+output "database_nat_gateway_route_ids" {
+  description = "List of IDs of the database nat gateway route"
+  value       = module.this.database_nat_gateway_route_ids
+}
 
-# output "database_subnets_ipv6_cidr_blocks" {
-#   description = "List of IPv6 cidr_blocks of database subnets in an IPv6 enabled VPC"
-#   value       = compact(module.database[*].ipv6_cidr_block)
-# }
+output "database_ipv6_egress_route_id" {
+  description = "ID of the database IPv6 egress route"
+  value       = module.this.database_ipv6_egress_route_id
+}
 
-# output "database_subnet_group" {
-#   description = "ID of database subnet group"
-#   value       = module.database.id
-# }
+output "database_route_table_association_ids" {
+  description = "List of IDs of the database route table association"
+  value       = module.this.database_route_table_association_ids
+}
 
-# output "database_subnet_group_name" {
-#   description = "Name of database subnet group"
-#   value       = module.database.name
-# }
+output "database_network_acl_id" {
+  description = "ID of the database network ACL"
+  value       = module.this.database_network_acl_id
+}
 
-# # output "database_route_table_ids" {
-# #   description = "List of IDs of database route tables"
-# #   # Refer to https://github.com/terraform-aws-modules/terraform-aws-vpc/pull/926 before changing logic
-# #   value = length(aws_route_table.database[*].id) > 0 ? aws_route_table.database[*].id : aws_route_table.private[*].id
-# # }
-
-# output "database_internet_gateway_route_id" {
-#   description = "ID of the database internet gateway route"
-#   value       = module.database_internet_gateway.id
-# }
-
-# output "database_nat_gateway_route_ids" {
-#   description = "List of IDs of the database nat gateway route"
-#   value       = aws_route.database_nat_gateway[*].id
-# }
-
-# output "database_ipv6_egress_route_id" {
-#   description = "ID of the database IPv6 egress route"
-#   value       = module.database_ipv6_egress.id
-# }
-
-# output "database_route_table_association_ids" {
-#   description = "List of IDs of the database route table association"
-#   value       = aws_route_table_association.database[*].id
-# }
-
-# output "database_network_acl_id" {
-#   description = "ID of the database network ACL"
-#   value       = module.database.id
-# }
-
-# output "database_network_acl_arn" {
-#   description = "ARN of the database network ACL"
-#   value       = module.database.arn
-# }
+output "database_network_acl_arn" {
+  description = "ARN of the database network ACL"
+  value       = module.this.database_network_acl_arn
+}
 
 # ################################################################################
 # # Redshift Subnets
@@ -463,20 +453,20 @@ output "private_subnets" {
 # # NAT Gateway
 # ################################################################################
 
-# output "nat_ids" {
-#   description = "List of allocation ID of Elastic IPs created for AWS NAT Gateway"
-#   value       = module.nat[*].id
-# }
+output "nat_ids" {
+  description = "List of allocation ID of Elastic IPs created for AWS NAT Gateway"
+  value       = module.this.nat_ids
+}
 
-# # output "nat_public_ips" {
-# #   description = "List of public Elastic IPs created for AWS NAT Gateway"
-# #   value       = var.reuse_nat_ips ? var.external_nat_ips : aws_eip.nat[*].public_ip
-# # }
+output "nat_public_ips" {
+  description = "List of public Elastic IPs created for AWS NAT Gateway"
+  value       = module.this.nat_public_ips
+}
 
-# output "natgw_ids" {
-#   description = "List of NAT Gateway IDs"
-#   value       = module.this[*].id
-# }
+output "natgw_ids" {
+  description = "List of NAT Gateway IDs"
+  value       = module.this.natgw_ids
+}
 
 # ################################################################################
 # # Egress Only Gateway
@@ -510,93 +500,83 @@ output "private_subnets" {
 # # VPN Gateway
 # ################################################################################
 
-# # output "vgw_id" {
-# #   description = "The ID of the VPN Gateway"
-# #   value       = try(aws_vpn_gateway.this.id, aws_vpn_gateway_attachment.this.vpn_gateway_id
-# # }
+output "vgw_id" {
+  description = "The ID of the VPN Gateway"
+  value       = module.this.vgw_id
+}
 
-# # output "vgw_arn" {
-# #   description = "The ARN of the VPN Gateway"
-# #   value       = try(aws_vpn_gateway.this.arn
-# # }
+output "vgw_arn" {
+  description = "The ARN of the VPN Gateway"
+  value       = module.this.vgw_arn
+}
 
 # ################################################################################
 # # Default VPC
 # ################################################################################
 
-# output "default_vpc_id" {
-#   description = "The ID of the Default VPC"
-#   value       = module.this.id
-# }
+output "default_vpc_id" {
+  description = "The ID of the Default VPC"
+  value       = module.this.default_vpc_id
+}
 
-# output "default_vpc_arn" {
-#   description = "The ARN of the Default VPC"
-#   value       = module.this.arn
-# }
+output "default_vpc_arn" {
+  description = "The ARN of the Default VPC"
+  value       = module.this.default_vpc_arn
+}
 
-# output "default_vpc_cidr_block" {
-#   description = "The CIDR block of the Default VPC"
-#   value       = module.this.cidr_block
-# }
+output "default_vpc_cidr_block" {
+  description = "The CIDR block of the Default VPC"
+  value       = module.this.default_vpc_cidr_block
+}
 
-# output "default_vpc_default_security_group_id" {
-#   description = "The ID of the security group created by default on Default VPC creation"
-#   value       = module.this.default_security_group_id
-# }
+output "default_vpc_default_security_group_id" {
+  description = "The ID of the security group created by default on Default VPC creation"
+  value       = module.this.default_vpc_default_security_group_id
+}
 
-# output "default_vpc_default_network_acl_id" {
-#   description = "The ID of the default network ACL of the Default VPC"
-#   value       = module.this.default_network_acl_id
-# }
+output "default_vpc_default_network_acl_id" {
+  description = "The ID of the default network ACL of the Default VPC"
+  value       = module.this.default_vpc_default_network_acl_id
+}
 
-# output "default_vpc_default_route_table_id" {
-#   description = "The ID of the default route table of the Default VPC"
-#   value       = module.this.default_route_table_id
-# }
+output "default_vpc_default_route_table_id" {
+  description = "The ID of the default route table of the Default VPC"
+  value       = module.this.default_vpc_default_route_table_id
+}
 
-# output "default_vpc_instance_tenancy" {
-#   description = "Tenancy of instances spin up within Default VPC"
-#   value       = module.this.instance_tenancy
-# }
+output "default_vpc_instance_tenancy" {
+  description = "Tenancy of instances spin up within Default VPC"
+  value       = module.this.default_vpc_instance_tenancy
+}
 
-# output "default_vpc_enable_dns_support" {
-#   description = "Whether or not the Default VPC has DNS support"
-#   value       = module.this.enable_dns_support
-# }
+output "default_vpc_enable_dns_support" {
+  description = "Whether or not the Default VPC has DNS support"
+  value       = module.this.default_vpc_enable_dns_support
+}
 
-# output "default_vpc_enable_dns_hostnames" {
-#   description = "Whether or not the Default VPC has DNS hostname support"
-#   value       = module.this.enable_dns_hostnames
-# }
+output "default_vpc_enable_dns_hostnames" {
+  description = "Whether or not the Default VPC has DNS hostname support"
+  value       = module.this.default_vpc_enable_dns_hostnames
+}
 
-# output "default_vpc_main_route_table_id" {
-#   description = "The ID of the main route table associated with the Default VPC"
-#   value       = module.this.main_route_table_id
-# }
+output "default_vpc_main_route_table_id" {
+  description = "The ID of the main route table associated with the Default VPC"
+  value       = module.this.default_vpc_main_route_table_id
+}
 
 # ################################################################################
 # # VPC Flow Log
 # ################################################################################
 
-# output "vpc_flow_log_id" {
-#   description = "The ID of the Flow Log resource"
-#   value       = module.this.id
-# }
+output "vpc_flow_log_id" {
+  description = "The ID of the Flow Log resource"
+  value       = module.this.vpc_flow_log_id
+}
 
-# # output "vpc_flow_log_destination_arn" {
-# #   description = "The ARN of the destination for VPC Flow Logs"
-# #   value       = local.flow_log_destination_arn
-# # }
-
-# # output "vpc_flow_log_destination_type" {
-# #   description = "The type of the destination for VPC Flow Logs"
-# #   value       = var.flow_log_destination_type
-# # }
-
-# # output "vpc_flow_log_cloudwatch_iam_role_arn" {
-# #   description = "The ARN of the IAM role used when pushing logs to Cloudwatch log group"
-# #   value       = local.flow_log_iam_role_arn
-# # }
+output "vpc_flow_log_destination_type" {
+  description = "The type of the destination for VPC Flow Logs"
+  value       = var.flow_log_destination_type
+}
 
 # ################################################################################
 # # Static values (arguments)
