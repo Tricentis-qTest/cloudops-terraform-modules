@@ -591,3 +591,13 @@ output "name" {
   description = "The name of the VPC specified as argument to this module"
   value       = var.name
 }
+
+output "private_route_table_ids" {
+  description = "List of IDs of private route tables"
+  value       = module.this.private_route_table_ids
+}
+
+output "public_route_table_ids" {
+  description = "List of IDs of public route tables"
+  value       = module.this.public_route_table_ids
+}
