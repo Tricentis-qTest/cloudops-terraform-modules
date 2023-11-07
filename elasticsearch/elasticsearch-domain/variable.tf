@@ -150,10 +150,10 @@ variable "availability_zone_count" {
   default     = 2
   description = "Number of Availability Zones for the domain to use."
 
-  validation {
-    condition     = contains([2, 3], var.availability_zone_count)
-    error_message = "The availibility zone count must be 2 or 3."
-  }
+  # validation {
+  #   condition     = contains([2, 3], var.availability_zone_count)
+  #   error_message = "The availibility zone count must be 2 or 3."
+  # }
 }
 
 variable "ebs_volume_size" {
@@ -164,13 +164,13 @@ variable "ebs_volume_size" {
 
 variable "ebs_volume_type" {
   type        = string
-  default     = "gp2"
+  default     = "gp3"
   description = "Storage type of EBS volumes"
 }
 
 variable "ebs_iops" {
-  type        = number
-  default     = 0
+  type = number
+  # default     = 0
   description = "The baseline input/output (I/O) performance of EBS volumes attached to data nodes. Applicable only for the Provisioned IOPS EBS volume type"
 }
 
