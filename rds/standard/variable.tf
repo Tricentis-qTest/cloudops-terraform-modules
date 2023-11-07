@@ -30,7 +30,7 @@ variable "storage_type" {
 variable "storage_throughput" {
   description = "Storage throughput value for the DB instance. See `notes` for limitations regarding this variable for `gp3`"
   type        = number
-  default     = null
+  default     = 125
 }
 
 variable "storage_encrypted" {
@@ -187,7 +187,7 @@ variable "multi_az" {
 variable "iops" {
   description = "The amount of provisioned IOPS. Setting this implies a storage_type of 'io1' or `gp3`. See `notes` for limitations regarding this variable for `gp3`"
   type        = number
-  default     = null
+  default     = 3000
 }
 
 variable "publicly_accessible" {
